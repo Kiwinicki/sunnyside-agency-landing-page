@@ -44,6 +44,10 @@ body {
           align-items: center;
 }
 
+.site-header__logo {
+  height: 2rem;
+}
+
 .site-header__nav-btn {
   border: none;
   background-color: transparent;
@@ -91,18 +95,18 @@ body {
 
 .site-header__contact-btn {
   padding: 1rem 2rem;
+  -webkit-transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
+  transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
   border: none;
   border-radius: 2rem;
   background: #fad400;
-  cursor: pointer;
-  -webkit-transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
-  transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
   color: #23303e;
   font-family: "Fraunces", serif;
   font-size: 1rem;
   font-weight: 900;
   text-decoration: none;
   text-transform: uppercase;
+  cursor: pointer;
 }
 
 .site-header__contact-btn:hover {
@@ -145,11 +149,11 @@ body {
 }
 
 .section-text {
-  padding: 3rem 1.5rem;
-  text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding: 3rem 1.5rem;
+  text-align: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -205,12 +209,12 @@ body {
 }
 
 .section-with-img {
-  position: relative;
-  padding-top: calc(1200 / 750 * 100%);
-  background-size: contain !important;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
+  padding-top: calc(1200 / 750 * 100%);
+  background-size: contain !important;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -319,7 +323,6 @@ body {
 }
 
 .site-footer__logo {
-  height: 2rem;
   margin-bottom: 3rem;
   -webkit-filter: invert(77%) sepia(60%) saturate(351%) hue-rotate(116deg) contrast(92%);
           filter: invert(77%) sepia(60%) saturate(351%) hue-rotate(116deg) contrast(92%);
@@ -410,14 +413,14 @@ body {
             transform: translate(-50%);
   }
   .section-text {
-    text-align: left;
     position: relative;
+    text-align: left;
   }
   .section-text:first-of-type {
+    padding: 0 15% 0 20%;
     -webkit-box-ordinal-group: 0;
         -ms-flex-order: -1;
             order: -1;
-    padding: 0 15% 0 20%;
   }
   .section-text:nth-of-type(2) {
     padding: 0 20% 0 15%;
@@ -441,10 +444,10 @@ body {
     font-size: 1.2rem;
   }
   .testimonials-item {
+    padding: 1rem;
     -webkit-box-flex: 1;
         -ms-flex: 1 1 33%;
             flex: 1 1 33%;
-    padding: 1rem;
   }
   .testimonials-item__opinion {
     padding: 2rem 0;

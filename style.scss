@@ -60,6 +60,9 @@ body {
 	z-index: 1;
 	justify-content: space-between;
 	align-items: center;
+	&__logo {
+		height: 2rem;
+	}
 	&__nav-btn {
 		border: none;
 		background-color: transparent;
@@ -100,17 +103,17 @@ body {
 	}
 	&__contact-btn {
 		padding: 1rem 2rem;
+		transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
 		border: none;
 		border-radius: 2rem;
 		background: $yellow;
-		cursor: pointer;
-		transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
 		color: $very-dark-desaturated-blue;
 		font-family: $font-fraunces;
 		font-size: 1rem;
 		font-weight: 900;
 		text-decoration: none;
 		text-transform: uppercase;
+		cursor: pointer;
 		&:hover {
 			background-color: rgba($color: #fff, $alpha: 0.35);
 			color: $white;
@@ -152,9 +155,9 @@ body {
 }
 
 .section-text {
+	display: flex;
 	padding: 3rem 1.5rem; // clamp
 	text-align: center;
-	display: flex;
 	align-items: center;
 	&__heading {
 		margin-bottom: 1.5rem;
@@ -201,10 +204,10 @@ body {
 }
 
 .section-with-img {
+	display: flex;
 	position: relative;
 	padding-top: calc(1200 / 750 * 100%); // w/h*100% for div size equal bg-img size
 	background-size: contain !important;
-	display: flex;
 	justify-content: center;
 	&__cnt {
 		position: absolute;
@@ -286,7 +289,6 @@ body {
 	flex-direction: column;
 	align-items: center;
 	&__logo {
-		height: 2rem;
 		margin-bottom: 3rem;
 		filter: $svg-color-filter;
 	}
@@ -367,11 +369,11 @@ body {
 	}
 
 	.section-text {
-		text-align: left;
 		position: relative;
+		text-align: left;
 		&:first-of-type {
-			order: -1;
 			padding: 0 15% 0 20%;
+			order: -1;
 		}
 		&:nth-of-type(2) {
 			padding: 0 20% 0 15%;
@@ -400,9 +402,9 @@ body {
 	}
 
 	.testimonials-item {
-		flex: 1 1 33%;
 		// width: 30%;
 		padding: 1rem;
+		flex: 1 1 33%;
 		&__opinion {
 			padding: 2rem 0;
 		}
