@@ -36,9 +36,6 @@ body {
 	background-color: adjust-color($color: $soft-red, $lightness: 29%);
 }
 
-// .site-main {
-// }
-
 .sections-grid {
 	display: grid;
 	grid-template-columns: 1fr;
@@ -49,14 +46,11 @@ body {
 	font-weight: 900;
 }
 
-%section {
-}
-
 .site-header {
 	display: flex;
 	position: absolute;
 	width: 100%;
-	padding: 2rem $screen-edge-space; // do zmiany
+	padding: 2rem $screen-edge-space;
 	z-index: 1;
 	justify-content: space-between;
 	align-items: center;
@@ -139,7 +133,7 @@ body {
 		position: absolute;
 		top: 50%;
 		left: 50%;
-		transform: translate(-50%, 2vw); // bad
+		transform: translate(-50%, 2vw);
 	}
 }
 
@@ -152,7 +146,7 @@ body {
 
 .section-text {
 	display: flex;
-	padding: 3rem 1.5rem; // clamp
+	padding: 3rem 1.5rem;
 	text-align: center;
 	align-items: center;
 	&__heading {
@@ -202,7 +196,7 @@ body {
 .section-with-img {
 	display: flex;
 	position: relative;
-	padding-top: calc(1200 / 750 * 100%); // w/h*100% for div size equal bg-img size
+	padding-top: calc(1200 / 750 * 100%); // w / h * 100% for div size equal bg-img size
 	background-size: contain !important;
 	justify-content: center;
 	&__cnt {
@@ -398,11 +392,9 @@ body {
 		&__heading {
 			font-size: 1.2rem;
 		}
-		// justify-content: center;
 	}
 
 	.testimonials-item {
-		// width: 30%;
 		padding: 1rem;
 		flex: 1 1 33%;
 		&__opinion {
