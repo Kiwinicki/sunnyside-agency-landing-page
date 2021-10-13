@@ -47,6 +47,7 @@ body {
 .site-header__nav-btn {
   border: none;
   background-color: transparent;
+  cursor: pointer;
 }
 
 .site-header__nav-menu {
@@ -93,15 +94,20 @@ body {
   border: none;
   border-radius: 2rem;
   background: #fad400;
-}
-
-.site-header__contact-btn-link {
+  cursor: pointer;
+  -webkit-transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
+  transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
   color: #23303e;
   font-family: "Fraunces", serif;
   font-size: 1rem;
   font-weight: 900;
   text-decoration: none;
   text-transform: uppercase;
+}
+
+.site-header__contact-btn:hover {
+  background-color: rgba(255, 255, 255, 0.35);
+  color: white;
 }
 
 .primary-section {
@@ -141,6 +147,12 @@ body {
 .section-text {
   padding: 3rem 1.5rem;
   text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .section-text__heading {
@@ -196,12 +208,18 @@ body {
   position: relative;
   padding-top: calc(1200 / 750 * 100%);
   background-size: contain !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .section-with-img__cnt {
   position: absolute;
-  bottom: 3rem;
-  padding: 0 1.5rem;
+  bottom: 4vh;
+  padding: 0 clamp(1.5rem, 3vw, 10rem);
   text-align: center;
 }
 
@@ -230,15 +248,12 @@ body {
   display: flex;
   padding: 3rem 2rem;
   text-align: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
 
 .testimonials-list__heading {
+  width: 100%;
   padding: 2rem 0;
   color: #a7abae;
   font-size: 1rem;
@@ -304,7 +319,7 @@ body {
 }
 
 .site-footer__logo {
-  width: 50vw;
+  height: 2rem;
   margin-bottom: 3rem;
   -webkit-filter: invert(77%) sepia(60%) saturate(351%) hue-rotate(116deg) contrast(92%);
           filter: invert(77%) sepia(60%) saturate(351%) hue-rotate(116deg) contrast(92%);
@@ -320,19 +335,13 @@ body {
   display: flex;
   width: 100%;
   list-style-type: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .site-footer__list--pages {
   margin-bottom: 4.5rem;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.site-footer__list--social-media {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 
 .site-footer__list-item:not(:last-of-type) {
@@ -344,7 +353,12 @@ body {
   text-decoration: none;
 }
 
-@media only screen and (min-width: 768px) {
+.site-footer__link:hover {
+  -webkit-filter: brightness(0) invert(1);
+          filter: brightness(0) invert(1);
+}
+
+@media only screen and (min-width: 1024px) {
   .site-header__nav-btn {
     display: none;
   }
@@ -397,15 +411,19 @@ body {
   }
   .section-text {
     text-align: left;
+    position: relative;
   }
   .section-text:first-of-type {
     -webkit-box-ordinal-group: 0;
         -ms-flex-order: -1;
             order: -1;
-    padding: 20% 15% 20% 20%;
+    padding: 0 15% 0 20%;
   }
   .section-text:nth-of-type(2) {
-    padding: 20% 20% 20% 15%;
+    padding: 0 20% 0 15%;
+  }
+  .section-text__heading {
+    font-size: 2.25rem;
   }
   .section-with-img {
     padding-top: calc(600 / 720 * 100%);
@@ -416,11 +434,37 @@ body {
   .section-with-img--photography {
     background: url("./images/desktop/image-photography.jpg");
   }
+  .testimonials-list {
+    padding: 10% 10%;
+  }
+  .testimonials-list__heading {
+    font-size: 1.2rem;
+  }
+  .testimonials-item {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 33%;
+            flex: 1 1 33%;
+    padding: 1rem;
+  }
+  .testimonials-item__opinion {
+    padding: 2rem 0;
+  }
   .gallery__img {
     max-width: 25%;
     -webkit-box-flex: 1;
         -ms-flex: 1 1 25%;
             flex: 1 1 25%;
+  }
+  .site-footer__nav {
+    width: 100%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .site-footer__list--pages {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 /*# sourceMappingURL=style.css.map */

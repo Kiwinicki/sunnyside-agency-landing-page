@@ -63,6 +63,7 @@ body {
 	&__nav-btn {
 		border: none;
 		background-color: transparent;
+		cursor: pointer;
 	}
 	&__nav-menu {
 		position: absolute;
@@ -102,14 +103,18 @@ body {
 		border: none;
 		border-radius: 2rem;
 		background: $yellow;
-	}
-	&__contact-btn-link {
+		cursor: pointer;
+		transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
 		color: $very-dark-desaturated-blue;
 		font-family: $font-fraunces;
 		font-size: 1rem;
 		font-weight: 900;
 		text-decoration: none;
 		text-transform: uppercase;
+		&:hover {
+			background-color: rgba($color: #fff, $alpha: 0.35);
+			color: $white;
+		}
 	}
 }
 
@@ -149,8 +154,8 @@ body {
 .section-text {
 	padding: 3rem 1.5rem; // clamp
 	text-align: center;
-	// align-items: center;
-
+	display: flex;
+	align-items: center;
 	&__heading {
 		margin-bottom: 1.5rem;
 		color: $very-dark-desaturated-blue;
@@ -198,11 +203,13 @@ body {
 .section-with-img {
 	position: relative;
 	padding-top: calc(1200 / 750 * 100%); // w/h*100% for div size equal bg-img size
-	background-size: contain !important; // bad
+	background-size: contain !important;
+	display: flex;
+	justify-content: center;
 	&__cnt {
 		position: absolute;
-		bottom: 3rem;
-		padding: 0 1.5rem;
+		bottom: 4vh;
+		padding: 0 clamp(1.5rem, 3vw, 10rem);
 		text-align: center;
 	}
 	&--graphic-design {
@@ -227,9 +234,9 @@ body {
 	display: flex;
 	padding: 3rem 2rem;
 	text-align: center;
-	flex-direction: row;
 	flex-wrap: wrap;
 	&__heading {
+		width: 100%;
 		padding: 2rem 0;
 		color: $grayish-blue;
 		font-size: 1rem;
@@ -279,7 +286,7 @@ body {
 	flex-direction: column;
 	align-items: center;
 	&__logo {
-		width: 50vw;
+		height: 2rem;
 		margin-bottom: 3rem;
 		filter: $svg-color-filter;
 	}
@@ -290,13 +297,12 @@ body {
 		display: flex;
 		width: 100%;
 		list-style-type: none;
+		justify-content: center;
 		&--pages {
 			margin-bottom: 4.5rem;
-			justify-content: space-between;
 			@extend .site-footer__list;
 		}
 		&--social-media {
-			justify-content: center;
 			@extend .site-footer__list;
 		}
 	}
@@ -306,11 +312,13 @@ body {
 	&__link {
 		color: $dark-moderate-blue;
 		text-decoration: none;
+		&:hover {
+			filter: brightness(0) invert(1);
+		}
 	}
 }
 
-@media only screen and (min-width: 768px) {
-	// @media only screen and (min-width: 600px) {
+@media only screen and (min-width: 1024px) {
 	.site-header {
 		&__nav-btn {
 			display: none;
@@ -360,30 +368,21 @@ body {
 
 	.section-text {
 		text-align: left;
-		// position: relative;
-		// &__cnt {
-		// 	width: 50%;
-		// 	position: absolute;
-		// 	left: 50%;
-		// 	top: 50%;
-		// 	transform: translate(-50%, -50%);
-		// }
+		position: relative;
 		&:first-of-type {
 			order: -1;
-			padding: 20% 15% 20% 20%;
+			padding: 0 15% 0 20%;
 		}
 		&:nth-of-type(2) {
-			padding: 20% 20% 20% 15%;
+			padding: 0 20% 0 15%;
+		}
+		&__heading {
+			font-size: 2.25rem;
 		}
 	}
 
 	.section-with-img {
 		padding-top: calc(600 / 720 * 100%);
-		&__cnt {
-			// bottom: 3.5vh; // Min/Max/clamp
-			// padding: 0 5vw; // Min/Max/clamp
-			// height: 15vh;
-		}
 		&--graphic-design {
 			background: url('./images/desktop/image-graphic-design.jpg');
 		}
@@ -393,18 +392,20 @@ body {
 	}
 
 	.testimonials-list {
-		// padding: 5vw;
-		// &__heading {
-		// 	width: 100%;
-		// 	padding-bottom: 4rem;
-		// }
+		padding: 10% 10%;
+		&__heading {
+			font-size: 1.2rem;
+		}
 		// justify-content: center;
 	}
 
 	.testimonials-item {
-		// flex: 1 1 33%;
+		flex: 1 1 33%;
 		// width: 30%;
-		// padding: 2rem;
+		padding: 1rem;
+		&__opinion {
+			padding: 2rem 0;
+		}
 	}
 
 	.gallery {
@@ -415,41 +416,14 @@ body {
 	}
 
 	.site-footer {
-		// 	display: flex;
-		// 	padding: 4rem 2rem;
-		// 	background-color: adjust-color($color: $dark-moderate-blue, $lightness: 29%); // almost equal to #91d3c5
-		// 	flex-direction: column;
-		// 	align-items: center;
-		// &__logo {
-		// 	height: 1rem;
-		// 	width: min-content;
-		// 	// margin-bottom: 3rem;
-		// 	// filter: $svg-color-filter;
-		// }
-		// 	&__nav {
-		// 		width: 100%;
-		// 	}
-		// 	&__list {
-		// 		display: flex;
-		// 		width: 100%;
-		// 		list-style-type: none;
-		// 		&--pages {
-		// 			margin-bottom: 4.5rem;
-		// 			justify-content: space-between;
-		// 			// @extend .site-footer__list;
-		// 		}
-		// 		&--social-media {
-		// 			justify-content: center;
-		// 			// @extend .site-footer__list;
-		// 		}
-		// 	}
-		// 	&__list-item:not(:last-of-type) {
-		// 		margin-right: 2rem;
-		// 	}
-		// 	&__link {
-		// 		color: $dark-moderate-blue;
-		// 		// font-size: 18px;
-		// 		text-decoration: none;
-		// 	}
+		&__nav {
+			width: 100%;
+			justify-content: center;
+		}
+		&__list {
+			&--pages {
+				justify-content: center;
+			}
+		}
 	}
 }
