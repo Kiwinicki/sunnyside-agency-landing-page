@@ -114,10 +114,6 @@ body {
 		text-decoration: none;
 		text-transform: uppercase;
 		cursor: pointer;
-		&:hover {
-			background-color: rgba($color: #fff, $alpha: 0.35);
-			color: $white;
-		}
 	}
 }
 
@@ -347,6 +343,10 @@ body {
 		&__contact-btn {
 			padding: 1rem 1.5rem;
 			background: $white;
+			&:hover {
+				background-color: rgba($color: #fff, $alpha: 0.35);
+				color: $white;
+			}
 		}
 		&__contact-btn-link {
 			font-size: 0.85rem;

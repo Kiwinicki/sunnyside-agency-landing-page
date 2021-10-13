@@ -109,11 +109,6 @@ body {
   cursor: pointer;
 }
 
-.site-header__contact-btn:hover {
-  background-color: rgba(255, 255, 255, 0.35);
-  color: white;
-}
-
 .primary-section {
   position: relative;
   padding-top: calc(1056 / 750 * 100%);
@@ -392,6 +387,10 @@ body {
   .site-header__contact-btn {
     padding: 1rem 1.5rem;
     background: white;
+  }
+  .site-header__contact-btn:hover {
+    background-color: rgba(255, 255, 255, 0.35);
+    color: white;
   }
   .site-header__contact-btn-link {
     font-size: 0.85rem;
